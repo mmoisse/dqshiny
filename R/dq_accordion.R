@@ -133,6 +133,7 @@ accordion_script <- function(id, options, sortable) {
                  if (!is.null(options)) ",",
                  "beforeActivate: function(event, ui) {
       if (ui && ui.newHeader[0]) {
+        shinyjs.show({id : ui.newHeader.attr('id')});
         Shiny.onInputChange('", id, "', ui.newHeader[0].textContent);
       }
     }}")
